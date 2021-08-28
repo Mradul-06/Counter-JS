@@ -1,10 +1,23 @@
-const decreasebtn = document.querySelector(".btndecrease")
-let resetbtn = document.querySelector(".bt reset")
-let increasebtn = document.querySelector(".btn increase")
-let value = document.querySelector("#value")
-
+const decreasebtn = document.querySelector(".btn.decrease")
+const resetbtn = document.querySelector(".btn.reset")
+const increasebtn = document.querySelector(".btn.increase")
+let countValue = document.querySelector("#value")
+count = countValue.value;
+count = 0;
 function decreaseValue(){
-    console.log("hello")
+    count -= 1
+    countValue.textContent = count
+}
+function resetValue(){
+    count = 0
+    countValue.textContent = count
+    
+}
+function increaseValue(){
+    count += 1
+    countValue.textContent = count
 }
 
-decreasebtn.addEventListener("click",decreaseValue())
+decreasebtn.addEventListener("click",decreaseValue)
+resetbtn.addEventListener("click",resetValue)
+increasebtn.addEventListener("click",increaseValue)
